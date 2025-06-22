@@ -56,7 +56,26 @@ grid.text(
 )
 
 
+ # 
+  # Create an UpSet Plot
+  # 
+  # Create an UpSet plot by passing the original binary matrix into the upset() function.  You can specify a number of parameters as outlined by this very clear vignette, but it also works very well outside of the box.  Other than the upset() function, the rest of the code is for labels and formatting. 
+  # 
 
+  
+  upset(sets,
+        nsets = 10, number.angles = 30, point.size = 3.5, line.size = 2,
+        mainbar.y.label = "Modes of Senior Transportation (Toronto 2017 Survey)", sets.x.label = "Total Participants"
+  )
+  grid.text(
+    "@littlemissdata",
+    x = 0.90,
+    y = 0.05,
+    gp = gpar(
+      fontsize = 10,
+      fontface = 3
+    )
+  )
 
 
 
