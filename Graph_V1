@@ -63,12 +63,12 @@ grid.text(
   # 
 
   
-  upset(sets,
+ upset(sets,
         nsets = 10, number.angles = 30, point.size = 3.5, line.size = 2,
         mainbar.y.label = "Modes of Senior Transportation (Toronto 2017 Survey)", sets.x.label = "Total Participants"
   )
   grid.text(
-    "@littlemissdata",
+    "datascientist_@outlook.com",
     x = 0.90,
     y = 0.05,
     gp = gpar(
