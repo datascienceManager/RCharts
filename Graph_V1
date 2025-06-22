@@ -96,3 +96,65 @@ grid.text(
   )
 
 
+
+  
+  # -------- Highlight 
+  
+  upset(sets,
+        query.legend = "bottom", nsets = 10, number.angles = 30, point.size = 3.5, line.size = 2,
+        mainbar.y.label = "Modes of Senior Transportation (Toronto 2017 Survey)", sets.x.label = "Total Participants", 
+        queries = list(
+          list(
+            query = intersects,
+            params = list("Cycle", "Walk"), 
+            color = "#Df5286", 
+            active = T,
+            query.name = "Physically Active Transportation"
+          )
+        )
+  )
+  grid.text(
+    "datascientist_@outlook.com",
+    x = 0.90,
+    y = 0.05,
+    gp = gpar(
+      fontsize = 7,
+      fontface = 1.5
+    )
+  )
+
+# --------------- 
+  
+  # Provide Context with Additional Graphs Called "Attribute Plots"
+  # 
+  # Beyond highlighting within the UpSet main graph, we also have the option of bringing in additional plots which can display information about other variables within the context of the sets.  
+  # 
+  # Display an in context box plot of age for each set using boxplot.summary() function 
+  # 
+  # In our next example, we are looking to display a boxplot of the minimumAgeRange for every single set.  We can do this very easily by just passing in the boxplot.summary parameter with the variable that we would like to summarize.  
+  # 
+  
+  upset(sets,
+        query.legend = "bottom", nsets = 10, number.angles = 30, point.size = 3.5, line.size = 2,  
+        queries = list(
+          list(
+            query = elements,
+            params = list("physicalActivityPerMonth", 0,4),
+            color = "#Df5286", 
+            active = T,
+            query.name = "Physically Active 1x/Week or Less"
+          )
+        ), 
+        boxplot.summary = c("minAgeRange")
+  )
+  grid.text(
+    "datascientist_@outlook.com",
+    x = 0.90,
+    y = 0.05,
+    gp = gpar(
+      fontsize = 7,
+      fontface = 1.5
+    )
+  )
+
+
